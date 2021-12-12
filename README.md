@@ -1,7 +1,4 @@
-### Hi there 👋
-
-
-🙋‍♂️ My name is Simon and I'm a professional software engineer.
+###  🙋‍♂️ Hello, my name is Simon and I'm a professional software engineer.
 
 👓 Here are some of the technologies I'm working with:
 
@@ -19,11 +16,5 @@
 [![Rust](https://img.shields.io/badge/Rust-learning-orange?style=flat&logo=rust)](https://duckduckgo.com/?q=rust+lang)
 [![Elm](https://img.shields.io/badge/Elm-learning-orange?style=flat&logo=elm)](https://duckduckgo.com/?q=elm+lang)
 [![Java](https://img.shields.io/badge/Java-dormant-blue?style=flat&logo=java)](https://duckduckgo.com/?q=java+openjdk)
-
-
-
-... and apparently I can do even more than that 🚀. Here's a breakdown of my **public** repository top languages:
-
-[![anliksim's GitHub Stats a](https://github-readme-stats.vercel.app/api/top-langs/?username=anliksim&theme=vue-dark&langs_count=10&layout=compact)](https://github.com/anliksim)
 
 <sub>🤫 Want to work with me? Get in touch [here](https://anlikerwebsolutions.com).</sub>
