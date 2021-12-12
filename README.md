@@ -17,6 +17,7 @@
 [![Terraform](https://img.shields.io/badge/Terraform-active-green?style=flat&logo=terraform)](https://duckduckgo.com/?q=hashicorp+terraform)
 [![Pulumi](https://img.shields.io/badge/Pulumi-learning-orange?style=flat&logo=pulumi)](https://duckduckgo.com/?q=pulumi)
 [![Rust](https://img.shields.io/badge/Rust-learning-orange?style=flat&logo=rust)](https://duckduckgo.com/?q=rust+lang)
+[![Elm](https://img.shields.io/badge/Elm-learning-orange?style=flat&logo=elm)](https://duckduckgo.com/?q=elm+lang)
 [![Java](https://img.shields.io/badge/Java-dormant-blue?style=flat&logo=java)](https://duckduckgo.com/?q=java+openjdk)
 
 
