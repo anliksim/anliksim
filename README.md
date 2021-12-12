@@ -1,7 +1,7 @@
 ### Hi there 👋
 
 
-🙋‍♂️ My name is Simon and I'm a professional software engineer. I get the question if I'm a full-stack developer. I rather see myself as a do-stuff developer.
+🙋‍♂️ My name is Simon and I'm a professional software engineer.
 
 👓 Here are some of the technologies I'm working with:
 
