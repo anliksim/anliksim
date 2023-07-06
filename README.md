@@ -1,7 +1,8 @@
-###  🙋‍♂️ Hello, my name is Simon and I'm a professional software engineer.
+###  🙋‍♂️ Hello, my name is Simon and I'm a software & solutions engineer.
 
 👓 Here are some of the technologies I'm working with:
 
+[![ApacheKafka](https://img.shields.io/badge/Apache%20Kafka-active-green?logo=apachekafka)](https://duckduckgo.com/?q=apache+kafka)
 [![Vue](https://img.shields.io/badge/Vue-active-green?style=flat&logo=vuedotjs)](https://duckduckgo.com/?q=vuejs)
 [![React](https://img.shields.io/badge/React-active-green?style=flat&logo=react)](https://duckduckgo.com/?q=reactjs)
 [![Flutter](https://img.shields.io/badge/Flutter-active-green?style=flat&logo=flutter)](https://duckduckgo.com/?q=flutter) \
