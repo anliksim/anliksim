@@ -1,5 +1,7 @@
 ###  🙋‍♂️ Hello, my name is Simon and I'm a software & solutions engineer.
 
+[![anlikerdev banner](banner.svg)](https://anliker.dev)
+
 👓 Here are some of the technologies I'm working with:
 
 <sup>❥ Cloud Providers:</sup>
