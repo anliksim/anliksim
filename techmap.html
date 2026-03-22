@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology Map — Simon Anliker</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: #f6f8fa;
+  color: #1f2328;
+  padding: 20px;
+  line-height: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #0d1117; color: #e6edf3; }
+}
+
+/* ── Map layout ────────────────────────────────────────── */
+
+.map {
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 8px;
+}
+
+/* ── Header / legend ────────────────────────────────────── */
+
+.map-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2px;
+}
+
+.map-title {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #636c76;
+}
+
+@media (prefers-color-scheme: dark) {
+  .map-title { color: #8b949e; }
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.575rem;
+  color: #636c76;
+}
+
+@media (prefers-color-scheme: dark) {
+  .legend-item { color: #8b949e; }
+}
+
+.legend-swatch {
+  border-radius: 3px;
+  border: 1px solid #d0d7de;
+  background: #eaeef2;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .legend-swatch { border-color: #30363d; background: #21262d; }
+}
+
+.legend-swatch.lg { width: 28px; height: 18px; border-radius: 4px; font-size: 0.5rem; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.legend-swatch.md { width: 20px; height: 13px; }
+.legend-swatch.sm { width: 15px; height: 10px; opacity: 0.45; }
+
+/* ── Section cards ───────────────────────────────────────── */
+
+.section {
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 13px 13px 11px;
+  background: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section { border-color: #30363d; background: #161b22; }
+}
+
+.section-label {
+  font-size: 0.575rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ── Tile grid ───────────────────────────────────────────── */
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-content: flex-start;
+}
+
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #d0d7de;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: filter 0.12s ease;
+  cursor: default;
+}
+
+.tile:hover { filter: brightness(1.08); }
+
+@media (prefers-color-scheme: dark) {
+  .tile { border-color: #30363d; }
+}
+
+/* Preferred — largest, coloured */
+.tile.p {
+  padding: 9px 14px;
+  font-size: 0.875rem;
+  height: 38px;
+}
+
+/* Used — medium, neutral */
+.tile.u {
+  padding: 5px 9px;
+  font-size: 0.72rem;
+  height: 26px;
+  background: #f6f8fa;
+  color: #57606a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tile.u { background: #0d1117; color: #8b949e; }
+}
+
+/* Superseded — small, muted, struck through */
+.tile.s {
+  padding: 3px 6px;
+  font-size: 0.6rem;
+  height: 20px;
+  background: transparent;
+  color: #b0b7c3;
+  border-color: transparent;
+  text-decoration: line-through;
+  text-decoration-color: #b0b7c3;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tile.s { color: #3d444d; text-decoration-color: #3d444d; }
+}
+
+/* ── Category accent colours ─────────────────────────────── */
+
+/* Cloud — blue */
+.cloud .section-label { color: #0969da; }
+.cloud .tile.p {
+  background: rgba(9, 105, 218, 0.08);
+  border-color: rgba(9, 105, 218, 0.28);
+  color: #0969da;
+}
+@media (prefers-color-scheme: dark) {
+  .cloud .section-label { color: #4493f8; }
+  .cloud .tile.p {
+    background: rgba(68, 147, 248, 0.1);
+    border-color: rgba(68, 147, 248, 0.32);
+    color: #4493f8;
+  }
+}
+
+/* Languages — green */
+.lang .section-label { color: #1a7f37; }
+.lang .tile.p {
+  background: rgba(26, 127, 55, 0.08);
+  border-color: rgba(26, 127, 55, 0.28);
+  color: #1a7f37;
+}
+@media (prefers-color-scheme: dark) {
+  .lang .section-label { color: #3fb950; }
+  .lang .tile.p {
+    background: rgba(63, 185, 80, 0.1);
+    border-color: rgba(63, 185, 80, 0.32);
+    color: #3fb950;
+  }
+}
+
+/* Frontend — purple */
+.frontend .section-label { color: #8250df; }
+.frontend .tile.p {
+  background: rgba(130, 80, 223, 0.08);
+  border-color: rgba(130, 80, 223, 0.28);
+  color: #8250df;
+}
+@media (prefers-color-scheme: dark) {
+  .frontend .section-label { color: #d2a8ff; }
+  .frontend .tile.p {
+    background: rgba(210, 168, 255, 0.1);
+    border-color: rgba(210, 168, 255, 0.32);
+    color: #d2a8ff;
+  }
+}
+
+/* Systems — orange */
+.sys .section-label { color: #bc4c00; }
+.sys .tile.p {
+  background: rgba(188, 76, 0, 0.08);
+  border-color: rgba(188, 76, 0, 0.28);
+  color: #bc4c00;
+}
+@media (prefers-color-scheme: dark) {
+  .sys .section-label { color: #f0883e; }
+  .sys .tile.p {
+    background: rgba(240, 136, 62, 0.1);
+    border-color: rgba(240, 136, 62, 0.32);
+    color: #f0883e;
+  }
+}
+
+/* ── Grid placement ──────────────────────────────────────── */
+
+.section-cloud    { grid-column: 1; grid-row: 1; }
+.section-lang     { grid-column: 2; grid-row: 1; }
+.section-frontend { grid-column: 1; grid-row: 2; }
+.section-sys      { grid-column: 2; grid-row: 2; }
+</style>
+</head>
+<body>
+
+<div class="map">
+
+  <div class="map-header">
+    <span class="map-title">Technology Map</span>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-swatch lg">Aa</div>
+        preferred
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch md"></div>
+        used
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch sm"></div>
+        superseded
+      </div>
+    </div>
+  </div>
+
+  <div class="section cloud section-cloud">
+    <span class="section-label">Cloud &amp; Infrastructure</span>
+    <div class="tiles">
+      <span class="tile p">GCP</span>
+      <span class="tile p">Cloudflare</span>
+      <span class="tile p">Pulumi</span>
+      <span class="tile u">Terraform</span>
+      <span class="tile u">Azure</span>
+      <span class="tile u">AWS</span>
+      <span class="tile u">Docker</span>
+      <span class="tile u">Kubernetes</span>
+      <span class="tile u">Firebase</span>
+      <span class="tile u">Kafka</span>
+      <span class="tile u">PostgreSQL</span>
+      <span class="tile u">Clickhouse</span>
+      <span class="tile u">DuckDB</span>
+    </div>
+  </div>
+
+  <div class="section lang section-lang">
+    <span class="section-label">Programming</span>
+    <div class="tiles">
+      <span class="tile p">Go</span>
+      <span class="tile u">Rust</span>
+      <span class="tile u">Java</span>
+      <span class="tile u">TypeScript</span>
+      <span class="tile u">JavaScript</span>
+      <span class="tile u">Python</span>
+    </div>
+  </div>
+
+  <div class="section frontend section-frontend">
+    <span class="section-label">Frontend</span>
+    <div class="tiles">
+      <span class="tile p">Qwik</span>
+      <span class="tile p">Astro</span>
+      <span class="tile p">Vite</span>
+      <span class="tile p">TailwindCSS</span>
+      <span class="tile u">Flutter</span>
+      <span class="tile u">React</span>
+      <span class="tile u">Tanstack</span>
+      <span class="tile s">Vue</span>
+      <span class="tile s">Nuxt.js</span>
+      <span class="tile s">Next.js</span>
+    </div>
+  </div>
+
+  <div class="section sys section-sys">
+    <span class="section-label">Systems</span>
+    <div class="tiles">
+      <span class="tile p">Windows + WSL</span>
+      <span class="tile u">MacOS</span>
+      <span class="tile u">Debian</span>
+      <span class="tile u">Ubuntu</span>
+      <span class="tile s">Manjaro</span>
+      <span class="tile s">Arch</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
