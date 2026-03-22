@@ -7,4 +7,4 @@
 
 ![technology map](./techmap.svg)
 
-<sub>🤫 Want to work with me? Get in touch on [LinkedIn](https://www.linkedin.com/in/anlikers/) or let me know you want to meet [here](https://anliker.dev/meet).</sub>
+<sub>🤫 Want to work with me? Get in touch on [LinkedIn](https://www.linkedin.com/in/anlikers/) or let me know you want to meet [here](https://calendar.app.google/wvnS5Bc3nBSPS7mVA).</sub>
